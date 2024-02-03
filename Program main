@@ -1,0 +1,77 @@
+import tkinter as tk
+from tkinter import *
+import customtkinter
+import math
+from tkinter import ttk, messagebox                                                                         #Importing packages that are required for the program to run
+import googletrans
+import textblob
+import time
+import os
+
+def Program():
+
+    root = customtkinter.CTk()
+    root.title("Understanding Logs and Exponentials Interactive Experience")
+    root.geometry("1600x900")
+    root.iconbitmap()
+
+
+    languages=googletrans.LANGUAGES                                                     #Obtains languages from google translate
+    language_list=list(languages.values())
+
+    original_combo=ttk.Combobox(root,width=20,value=language_list)                    #Creating Comboboxes for languages
+    original_combo.current(21)
+    
+    translated_combo=customtkinter.CTkComboBox(root, values=language_list)
+    translated_combo.set("english")                                                     #Setting default language to english
+    translated_combo.pack()
+
+    current_language = "Language: "+ translated_combo.get()
+
+    Text1 = Label(root, text=current_language).pack()
+
+    
+                                          
+    def translate():
+        try:                                                                                #Getting the languages from the dictionary Keys
+            for key, value in languages.items():                                            #Get the "From Language" key
+                if (value == original_combo.get()):
+                    from_language_key=key
+            for key,value in languages.items():                                             #Get the "To Language" key
+                if (value ==translated_combo.get()):
+                    to_language_key=key
+            
+            if translated_combo.get() == "english":                                         #English can't be translated to english
+                '''example.configure(text = "example text in english")'''                         #Translating to english will set it to defualt text
+
+        
+
+            if translated_combo.get() != "english":                                         #Runs this if the selected language was not english
+                
+                '''example = (textblob.TextBlob("example text in english").translate(from_lang=from_language_key, to=to_language_key))'''
+                current_language = (textblob.TextBlob("Language is").translate(from_lang=from_language_key, to=to_language_key))
+                print(current_language)
+                Text1.configure(text=current_language)
+            
+
+                
+               
+                
+                
+            for j in range(0,int(len(languages.values()))):                                 #Translating to selected language
+                if language_list[j]==translated_combo.get():
+                    original_combo.current(j)
+            
+        except Exception as e:
+            messagebox.showerror("Translator",e)
+            
+        print(translated_combo.get())
+
+
+    translate = customtkinter.CTkButton(root,text="Translate", command=translate).pack()
+
+
+
+    root.mainloop()
+
+Program()
