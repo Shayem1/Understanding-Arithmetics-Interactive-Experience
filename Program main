@@ -32,7 +32,6 @@ def Program():
     
 
     def scaler(event):                                                                    #scales the background image in the begining to the size of the screen
-
         new_width = event.width                                                              #Gets information about window
         newx_multi = new_width/1920                                                            #scales objects to the x-axis
         new_height = event.height                   
@@ -41,11 +40,9 @@ def Program():
 
         image = copy_of_image.resize((new_width,new_height))                                       #resizes image
         photo = ImageTk.PhotoImage(image)
-        label.config(image = photo)                                                              #configures/updates the background image
-        label.image = photo                                                                     #Deletes old images --> increases efficiency
+        background.config(image = photo)                                                              #configures/updates the background image
+        background.image = photo                                                                     #Deletes old images --> increases efficiency
 
-
-        start_menu_frame.configure(width=newx_multi*400, height=newy_multi*300)
         start_menu_frame.place(x=newx_multi*720,y =newy_multi*600)
         start_button.configure(font=("Comic Sans MS Bold",50*avg_multi)) 
         options_button.configure(font=("Comic Sans MS Bold",50*avg_multi))
@@ -57,11 +54,11 @@ def Program():
     image = Image.open("images\Learn_Arithmetic.png")                                           #opens the image file
     copy_of_image = image.copy()                                                                #creates a copy of the image file
     photo = ImageTk.PhotoImage(image)
-    label = Label(root, image = photo)                                                          #Assigns the image to the label
-    label.bind("<Configure>", scaler)                                                     #Configures the image to the screen
-    label.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
+    background = Label(root, image = photo)                                                          #Assigns the image to the label
+    background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
+    background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
 
-    start_menu_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="white", fg_color="light grey", width=400, height=300, border_color="grey")
+    start_menu_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="white", fg_color="light grey", border_color="grey")
     start_menu_frame.place(x=720, y = 600)                                                      #Frame in the start_menu
 
 
@@ -76,7 +73,10 @@ def Program():
     exit_button = customtkinter.CTkButton(start_menu_frame, text = exit, font=("Comic Sans MS Bold",50), text_color="#453735", fg_color="#BDBDBD", corner_radius=25, hover_color="#E3E3E3", command= close_app)
     exit_button.pack(padx=20, pady = 20,fill=BOTH, expand = YES)
 
-    '''screen = customtkinter.CTkButton(root,)'''
+    icon = Image.open("images\images.png")
+    copy_of_icon = icon.copy()
+    icon_button = Button(root, image=icon)
+    icon_button.place(x=50, y=50)
 
 
 
@@ -89,7 +89,7 @@ def Program():
     
     translated_combo=customtkinter.CTkComboBox(root, values=language_list)
     translated_combo.set("english")                                                     #Setting default language to english
-    translated_combo
+    translated_combo.place(x= 500, y = 300)
 
     
                                           
@@ -133,7 +133,7 @@ def Program():
 
 
     translate = customtkinter.CTkButton(root,text="Translate", command=translate)
-    translate
+    translate.place(x=500, y= 200)
 
     root.mainloop()
 
