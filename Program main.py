@@ -1,16 +1,13 @@
 
 from tkinter import *
 import customtkinter
-import math
-from tkinter import ttk, messagebox                                                                         #Importing packages that are required for the program to run
+from tkinter import ttk                                                                        #Importing packages that are required for the program to run
 from PIL import Image, ImageTk
 import googletrans
-import textblob
-import time
-import os
+import pyttsx3
 
 def Program():
-    global fullscreen, language, incorrect_counter, correct_counter, J
+    global fullscreen, language, incorrect_counter, correct_counter, J, lvl1, lvl2, lvl3, lvl4, lvl5, lvl6, lvl7, lvl8, lvl9, lvl10, lvl11, lvl12, lvl13, lvl14, lvl15, lvl16, lvl17, lvl18, lvl19, lvl20
         
     def close_app():
         root.destroy()
@@ -20,11 +17,9 @@ def Program():
         try:
             
             language = translated_combo.get()
-            print(language)
         except: pass
 
         file_path = "Text files\\"+language+".txt"
-        print(file_path)
         files = open(file_path, encoding='utf-8')
         text_file = []
         for i in files.readlines():
@@ -48,6 +43,12 @@ def Program():
         else:
             root.attributes("-fullscreen", False)
             fullscreen = False
+
+    def text_to_speech(text):
+        tts = pyttsx3.init()
+        tts.setProperty('rate',125)
+        tts.say(text)
+        tts.runAndWait()
 
     
 
@@ -203,15 +204,115 @@ def Program():
         apply_button.pack(padx=20, pady=20 ,fill=BOTH, expand = YES)
     
     def next(choice):
-        global correct_counter, incorrect_counter, J, explanation
+        global correct_counter, incorrect_counter, J, explanation, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20
         if choice == correct_answer:
             next_button = Image.open("images\mext.png")
             next_button = next_button.resize((50,50))
-            next_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(next_button), command=lambda:level_menu(L+1), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
 
+            if L == 1:
+                l1 = TRUE
+            if L == 2:
+                l2 = TRUE
+            if L == 3:
+                l3 = TRUE
+            if L == 4:
+                l4 = TRUE
+            if L == 5:
+                l5 = TRUE
+            if L == 6:
+                l6 = TRUE
+            if L == 7:
+                l7 = TRUE
+            if L == 8:
+                l8 = TRUE
+            if L == 9:
+                l9 = TRUE
+            if L == 10:
+                l10 = TRUE
+            if L == 11:
+                l11 = TRUE
+            if L == 12:
+                l12 = TRUE
+            if L == 13:
+                l13 = TRUE
+            if L == 14:
+                l14 = TRUE
+            if L == 15:
+                l15 = TRUE
+            if L == 16:
+                l16 = TRUE
+            if L == 17:
+                l17 = TRUE
+            if L == 18:
+                l18 = TRUE
+            if L == 19:
+                l19 = TRUE
+            if L == 20:
+                l20 = TRUE
+
+            next_level = L + 1
+                
+            next_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(next_button), command=lambda:level_menu(next_level), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
             if L == 20:
                 next_button.configure(command = level_selection)
             next_button.place(relx=0.97, rely=0.95, anchor= CENTER)
+            if next_level == 2 and l2 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 3 and l3 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 4 and l4 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 5 and l5 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 6 and l6 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 7 and l7 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 8 and l8 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 9 and l9 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 10 and l10 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 11 and l11 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 12 and l12 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 13 and l13 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 14 and l14 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 15 and l15 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 16 and l16 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 17 and l17 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 18 and l18 ==True:
+                next_button.destroy()
+                level_selection()
+            if next_level == 19 and l19 ==True:
+                next_button.destroy()
+                level_selection()
+            
+            
+
             correct_counter += 1
             answer1.configure(state= DISABLED)
             answer2.configure(state= DISABLED)
@@ -236,6 +337,7 @@ def Program():
             answer3.configure(state = DISABLED)
         if choice == 4:
             answer4.configure(state = DISABLED)
+
         
 
     def level_menu(lvl):
@@ -268,7 +370,16 @@ def Program():
         level_menu_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="#F1EDE3", fg_color="light grey", border_color="grey")
         level_menu_frame.place(relx=0.5, rely = 0.55, anchor = CENTER)                                                      #Frame in the start_menu
 
-        correct_answer = int(text_file[13+7*(lvl-1)])
+        f = open("Text files\english.txt", "r")
+        n = (13+7*(lvl-1))
+        tf = []
+        for i in f.readlines():
+            add = i.replace("Ã·","÷")
+            add = add.replace("\n","")
+            tf.append(add)
+        
+        correct_answer = int(tf[n])
+
 
         question = customtkinter.CTkLabel(master = root, text=text_file[8+7*(lvl-1)], font=("Comic Sans MS Bold",30), wraplength=855, text_color="black", fg_color= "white")
         question.place(relx = 0.5, rely = 0.185, anchor = CENTER)
@@ -292,6 +403,11 @@ def Program():
         LM_icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
         LM_icon_button.place(x=5, y=5) 
 
+        LM_speak = Image.open("images\speak.png")                                                    #Maximise/minimise speak
+        LM_speak = LM_speak.resize((40,40))
+        LM_speak_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_speak), command=lambda:text_to_speech(text_file[8+7*(lvl-1)]), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
+        LM_speak_button.place(relx=0.5, rely=0.348, anchor = CENTER) 
+
         LM_back_button = Image.open("images\Back.png")
         LM_back_button = LM_back_button.resize((50,50))
         LM_back_button_options_menu = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_back_button), command=level_selection, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
@@ -303,6 +419,8 @@ def Program():
     def level_selection():
         global LS_background, start_menu_frame, LS_copy_of_image, title3, level_selection_state, level_selection_frame, menu_screen_state, options_menu_state, LS_back_button_options_menu
         global lvl1, lvl2, lvl3, lvl4, lvl5, lvl6, lvl7, lvl8, lvl9, lvl10, lvl11, lvl12, lvl13, lvl14, lvl15, lvl16, lvl17, lvl18, lvl19, lvl20, incorrect_counter, correct_counter
+        global  l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20, L
+        
 
         if menu_screen_state == True:
             try:
@@ -314,10 +432,6 @@ def Program():
             try:
                 LM_background.destroy()
             except: pass
-
-        menu_screen_state = False
-        options_menu_state = False
-        level_selection_state = True
 
         
         LS_image = Image.open("images\level_selection.png")                                           #opens the image file
@@ -386,12 +500,58 @@ def Program():
         lvl19.grid(row = 3, column = 3, padx = 0, pady = 30)
         lvl20.grid(row = 3, column = 4, padx = 30, pady = 30)
 
+        if l1 == TRUE:
+            lvl1.configure(state= DISABLED)
+        if l2 == TRUE:
+            lvl2.configure(state= DISABLED)
+        if l3 == TRUE:
+            lvl3.configure(state= DISABLED)
+        if l4 == TRUE:
+            lvl4.configure(state= DISABLED)
+        if l5 == TRUE:
+            lvl5.configure(state= DISABLED)
+        if l11 == TRUE:
+            lvl11.configure(state= DISABLED)
+        if l12 == TRUE:
+            lvl12.configure(state= DISABLED)
+        if l13 == TRUE:
+            lvl13.configure(state= DISABLED)
+        if l14 == TRUE:
+            lvl14.configure(state= DISABLED)
+        if l15 == TRUE:
+            lvl5.configure(state= DISABLED)
+        if l6 == TRUE:
+            lvl6.configure(state= DISABLED)
+        if l7 == TRUE:
+            lvl7.configure(state= DISABLED)
+        if l8 == TRUE:
+            lvl8.configure(state= DISABLED)
+        if l9 == TRUE:
+            lvl9.configure(state= DISABLED)
+        if l20 == TRUE:
+            lvl20.configure(state= DISABLED)
+        if l16 == TRUE:
+            lvl16.configure(state= DISABLED)
+        if l17 == TRUE:
+            lvl17.configure(state= DISABLED)
+        if l18 == TRUE:
+            lvl18.configure(state= DISABLED)
+        if l19 == TRUE:
+            lvl19.configure(state= DISABLED)
+        if l10 == TRUE:
+            lvl10.configure(state= DISABLED)
+    
+
+        menu_screen_state = False
+        options_menu_state = False
+        level_selection_state = True
+
         LS_icon = Image.open("images\maximise_nav.png")                                                    #Maximise/minimise icon
         LS_icon = LS_icon.resize((30,30))
         LS_icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LS_icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
         LS_icon_button.place(x=5, y=5)                                                                 #Icon is an interactive toggle button
 
-        if L == 20:
+        if L == 20 and l20 == True:
             stats = customtkinter.CTkToplevel(master = root, takefocus = True)
             stats.geometry('300x200')
             stats.grab_set()
@@ -421,8 +581,28 @@ def Program():
             incorrect_counter = 0
             correct_counter = 0
 
-
-            
+            l1 = False
+            l2 = False
+            l3 = False
+            l4 = False
+            l5 = False
+            l6 = False
+            l7 = False
+            l8 = False
+            l9 = False
+            l10 = False
+            l11 = False
+            l12 = False
+            l13 = False
+            l14 = False
+            l15 = False
+            l16 = False
+            l17 = False
+            l18 = False
+            l19 = False
+            l20 = False
+            L = 0
+            menu_screen()
 
     def menu_screen():
         global MS_background, start_button, options_button, exit_button, start_menu_frame, MS_copy_of_image, icon, icon_button, menu_screen_state, options_menu_state, title1, title2, level_selection_state, level_menu_state
@@ -496,4 +676,24 @@ incorrect_counter = 0
 correct_counter = 0
 J = 0
 L = False
+l1 = False
+l2 = False
+l3 = False
+l4 = False
+l5 = False
+l6 = False
+l7 = False
+l8 = False
+l9 = False
+l10 = False
+l11 = False
+l12 = False
+l13 = False
+l14 = False
+l15 = False
+l16 = False
+l17 = False
+l18 = False
+l19 = False
+l20 = False
 Program()
