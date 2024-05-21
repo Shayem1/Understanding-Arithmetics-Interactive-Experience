@@ -6,6 +6,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 import googletrans
 import pyttsx3
+import time
 
 
 
@@ -36,7 +37,12 @@ root.iconbitmap("images\program_icon.ico")
 #Obtains languages from google translate and puts them in a list
 languages=googletrans.LANGUAGES
 language_list=list(languages.values())
+
+#the answers for each question (index is question level)
+answers_list = [1,3,4,3,2,4,3,1,3,2,4,1,1,3,2,3,2,2,2,4]
+
     
+
 
 
 
@@ -126,7 +132,8 @@ def switch_screen_toggle():
 #this short function is used for text to speech, it retrieves text based on the current level (explained later)
 #the speaking rate is set to 125 (default 200)
 #the runAndWait function is for the text to speech module to speak the text, it halts the program as it is speaking
-#*note, still trying to find a way to not halt the program while it speaks
+#*note, still trying to find a way to not halt the program while it speaks however there are reasons for this halt
+#functions as people spamming the button could crash the program or ovrlap the audio casuing other problems
 def text_to_speech(text):
     tts = pyttsx3.init()
     tts.setProperty('rate',125)
@@ -276,7 +283,7 @@ def next(choice):
 
         #this for loop checks if the current level is completed (using the flag veriable for levels)
         #L is defined as anything (it will be rewritten anyway)
-        for i in range(0,20,1):
+        for i in range(0,20):
             if L == i+1:
                 lvl_list[i] = True
 
@@ -285,46 +292,63 @@ def next(choice):
         
         #this is the button to allow the user to go to the next level, it is not enabled yet since this 
         #may occur at level 20 which doesnt make sense which is why theres an if statement next
-        next_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(next_button), command=lambda:level_menu(next_level), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
-        if L == 20:
-
-            #if the 
-            next_button.configure(command = level_selection)
+        next_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(next_button), command=lambda:level_menu(next_level), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED, state=DISABLED)
         next_button.place(relx=0.97, rely=0.95, anchor= CENTER)
 
-
-        for i in range(0,19,1):
-            if next_level == i+2 and lvl_list[i+1] == True:
-                print("did")
-                next_button.destroy()
-                level_selection()
-                
+        #if the L (current level) is 20, it does not make sense for the next button to go to level 21 so the 
+        #next_button is reconfigured making the user go to the stats menu and redirected to the main menu
+        #the button is also enabled now     
+        if L == 20:
+            next_button.configure(command = stats_menu, state= NORMAL)
         
 
+        #if the next level is already complete, it does not allow the user to repeat it (for better statistics)
+        #when the next level is a level is already complete, it removes the next button and sends the user to
+        #the level selection menu.
+        for i in range(0,19):
+            if next_level == i+2 and lvl_list[i+1] == True:
+                next_button.destroy()
+                level_selection()
+            
+        #if the next level is not already complete, it configures the button to be enabled. A try function is 
+        #required in case the next_button got destroyed. There is a small (under 1 second) window of time 
+        #where the user can press the next button before it gets destroyed where the program will run level
+        #21 but that will never happen since this is not run if the current level is 20.
+            else:
+                try:
+                    next_button.configure(state=NORMAL)
+                except: pass
+        
+        #This is inside the if statment for when the user gets the corect answer, the correct_counter counts
+        #the number of correct answers and then disables all the other buttons to not ruin the statistics
         correct_counter += 1
         answer1.configure(state= DISABLED)
         answer2.configure(state= DISABLED)
         answer3.configure(state= DISABLED)
         answer4.configure(state= DISABLED)
 
+
+    #this is if the user does not click on the right answer
     else:
+        #places the explanation to the answer and counts the incorrect answer(s)
         if J != L:
             explanation = customtkinter.CTkLabel(master = root, text=text_file[14+7*(L-1)], text_color="Black", fg_color= "#F1EDE3", font=("Comic Sans MS Bold",25), wraplength = 870)
             explanation.place(relx = 0.5, rely = 0.85, anchor = CENTER)
             J = L
             incorrect_counter += 1
-            try:
-                explanation.configure(font=("Comic Sans MS Bold",45*avg_multi), wraplength = 1305*newx_multi)
-            except: pass
 
-    if choice == 1:
-        answer1.configure(state = DISABLED)
-    if choice == 2:
-        answer2.configure(state = DISABLED)
-    if choice == 3:
-        answer3.configure(state = DISABLED)
-    if choice == 4:
-        answer4.configure(state = DISABLED)
+            #adjusts the size of the lable depending on the screen size
+            explanation.configure(font=("Comic Sans MS Bold",45*avg_multi), wraplength = 1305*newx_multi)
+            
+        #disables the button the user has selected previously (so they dont click on the same wrong button twice)
+        if choice == 1:
+            answer1.configure(state = DISABLED)
+        if choice == 2:
+            answer2.configure(state = DISABLED)
+        if choice == 3:
+            answer3.configure(state = DISABLED)
+        if choice == 4:
+            answer4.configure(state = DISABLED)
 
     
 
@@ -334,52 +358,44 @@ def next(choice):
 
 
 
-
-
-
-
-
+#this function is the menu for all the levels, depending on what lvl is sent to the function
 def level_menu(lvl):
-    global LM_background, level_selection_frame, LM_copy_of_image, level_menu_state, level_selection_state, question, answer4, answer1, answer2, answer3, L, correct_answer
+    global LM_background, level_selection_frame, LM_copy_of_image, level_menu_state, level_selection_state, question, answer4, answer1, answer2, answer3, L, correct_answer, level_menu_frame
 
+    #depending on the screen the level menu was requested from, the previous screen GUI
+    #elements gets destoryed.
     if level_selection_state == True:
-        try:
-            LS_background.destroy()
-            level_selection_frame.destroy()
-        except: pass
+        LS_background.destroy()
+        level_selection_frame.destroy()
 
     if level_menu_state == True:
-        try:
-            LM_background.destroy()
-            level_menu_frame.destroy()
-        except: pass
+        LM_background.destroy()
+        level_menu_frame.destroy()
 
+    #sets the flag veriables for the screen states
     level_selection_state = False
     level_menu_state = True
 
+    #placeholder for the current level
     L = lvl
 
     LM_image = Image.open("images\level_menu.png")                                           #opens the image file
     LM_copy_of_image = LM_image.copy()                                                                #creates a copy of the image file
+    LM_copy_of_image = LM_image.copy()                                                       #creates a copy of the image file
     LM_photo = ImageTk.PhotoImage(LM_image)
     LM_background = Label(root, image = LM_photo)                                                          #Assigns the image to the label
     LM_background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
     LM_background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
 
+    #setting up the frame and places background onto the screen
     level_menu_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="#F1EDE3", fg_color="light grey", border_color="grey")
     level_menu_frame.place(relx=0.5, rely = 0.55, anchor = CENTER)                                                      #Frame in the start_menu
 
-    f = open("Text files\english.txt", "r")
-    n = (13+7*(lvl-1))
-    tf = []
-    for i in f.readlines():
-        add = i.replace("Ã·","÷")
-        add = add.replace("\n","")
-        tf.append(add)
+    #retrieves the correct answer for this level
+    correct_answer = int(answers_list[lvl-1])
     
-    correct_answer = int(tf[n])
 
-
+    #setting up and placing the questions and multiple choice answers onto the GUI
     question = customtkinter.CTkLabel(master = root, text=text_file[8+7*(lvl-1)], font=("Comic Sans MS Bold",30), wraplength=855, text_color="black", fg_color= "white")
     question.place(relx = 0.5, rely = 0.185, anchor = CENTER)
 
@@ -402,15 +418,20 @@ def level_menu(lvl):
     LM_icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
     LM_icon_button.place(x=5, y=5) 
 
+    #configures the icon that speaks the text on the screen
     LM_speak = Image.open("images\speak.png")                                                    #Maximise/minimise speak
     LM_speak = LM_speak.resize((40,40))
     LM_speak_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_speak), command=lambda:text_to_speech(text_file[8+7*(lvl-1)]), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
     LM_speak_button.place(relx=0.5, rely=0.348, anchor = CENTER) 
 
+    #configures the back button
     LM_back_button = Image.open("images\Back.png")
     LM_back_button = LM_back_button.resize((50,50))
     LM_back_button_options_menu = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_back_button), command=level_selection, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
     LM_back_button_options_menu.place(relx=0.03, rely=0.95, anchor= CENTER)
+    
+    
+    
 
 
 
@@ -486,7 +507,6 @@ def level_selection():
             LM_background.destroy()
         except: pass
 
-    
     LS_image = Image.open("images\level_selection.png")                                           #opens the image file
     LS_copy_of_image = LS_image.copy()                                                                #creates a copy of the image file
     LS_photo = ImageTk.PhotoImage(LS_image)
@@ -571,8 +591,6 @@ def level_selection():
     LS_icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LS_icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
     LS_icon_button.place(x=5, y=5)                                                                 #Icon is an interactive toggle button
 
-    if L == 20 and lvl_list[L-1] == True:
-        stats_menu()
 
 def menu_screen():
     global MS_background, start_button, options_button, exit_button, start_menu_frame, MS_copy_of_image, icon, icon_button, menu_screen_state, options_menu_state, title1, title2, level_selection_state, level_menu_state
@@ -589,6 +607,13 @@ def menu_screen():
             LS_background.destroy()
             LS_back_button_options_menu.destroy()
         except: pass
+
+    if level_menu_state == True:
+        try:
+            LM_background.destroy()
+        except: pass
+    
+    
 
     menu_screen_state = True
     options_menu_state = False
