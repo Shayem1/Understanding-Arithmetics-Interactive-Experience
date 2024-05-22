@@ -1,154 +1,136 @@
-Mësoj
-Aritmetikë
-Filloj
+MÃ‹SOJMÃ‹
+ARITHMETIKA
+FILLO
 OPSIONE
-Dalje
-EKRAN I PLOTË
-Zbatoj
-Përzgjedhje e nivelit
-Q1 Çfarë është 5 + 3?
+DALJE
+EKRAN I PLOTÃ‹
+APLIKONI
+ZGJEDHJA E NIVELIVE
+Q1 Ã‡farÃ« Ã«shtÃ« 5 + 3?
 a) 8
 b) 7
 c) 6
 d) 9
-1
-Shpjegimi: Shtesa përfshin kombinimin e dy ose më shumë numrave për të gjetur totalin. Për të zgjidhur 5 + 3, ju numëroni 5, pastaj numëroni 3 më shumë, i cili është i barabartë me 8. Pra, përgjigjja e saktë është 8.
-Q2 Nëse keni 4 mollë dhe merrni edhe 2 të tjera, sa mollë keni krejt?
+Shpjegim: Mbledhja pÃ«rfshin kombinimin e dy ose mÃ« shumÃ« numrave pÃ«r tÃ« gjetur totalin. PÃ«r tÃ« zgjidhur 5 + 3, ju numÃ«roni 5, pastaj numÃ«roni 3 tÃ« tjera, qÃ« Ã«shtÃ« e barabartÃ« me 8. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 8.
+P2 NÃ«se keni 4 mollÃ« dhe merrni 2 tÃ« tjera, sa mollÃ« keni gjithsej?
 a) 4
 b) 5
 c) 6
 d) 7
-3
-Shpjegimi: Për të zbuluar sa mollë keni krejt, ju shtoni numrin e mollëve që keni filluar me (4) në numrin e mollëve që keni marrë (2). Pra, përgjigjja e saktë është 6.
-Q3 Cila nga sa vijon është e njëjtë me 2 + 6?
+Shpjegim: PÃ«r tÃ« zbuluar se sa mollÃ« keni gjithsej, shtoni numrin e mollÃ«ve qÃ« keni filluar me (4) me numrin e mollÃ«ve qÃ« keni marrÃ« (2). Pra, pÃ«rgjigjja e saktÃ« Ã«shtÃ« 6.
+P3 Cila nga sa vijon Ã«shtÃ« e njÃ«jtÃ« me 2 + 6?
 a) 5 + 2
 b) 6 + 3
 c) 7 + 4
-d) 4 + 4 
-4
-Shpjegimi: 4 + 4 është i njëjtë me 2 + 6. Numërimi 4 më shumë nga 4 na jep 8. Pra, përgjigjja e saktë është d.
-Q4 Nëse keni 7 ëmbëlsira dhe hani 2 prej tyre, sa ëmbëlsira keni lënë?
+d) 4 + 4
+Shpjegim: 4 + 4 Ã«shtÃ« e njÃ«jtÃ« me 2 + 6. Duke numÃ«ruar edhe 4 nga 4, na jepet 8. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« d.
+P4 NÃ«se keni 7 karamele dhe hani 2 prej tyre, sa karamele ju kanÃ« mbetur?
 a) 3
 b) 4
 c) 5
 d) 6
-3
-Shpjegimi: Kur hani diçka, ju keni më pak nga ajo gjë. Pra, për të zbuluar se sa ëmbëlsira keni lënë, ju zbritni numrin e karameleve të ngrënë (2) nga numri i përgjithshëm i ëmbëlsirave (7). 7 - 2 është e barabartë me 5. Pra, përgjigjja e saktë është 5.
-Q5 Cili është numri që mungon në ekuacionin: 9 + __ = 11?
+Shpjegim: Kur hani diÃ§ka, keni mÃ« pak nga ajo gjÃ«. Pra, pÃ«r tÃ« zbuluar se sa karamele ju kanÃ« mbetur, ju zbritni numrin e Ã«mbÃ«lsirave tÃ« ngrÃ«nÃ« (2) nga numri i pÃ«rgjithshÃ«m i karamele (7). 7 - 2 Ã«shtÃ« 5. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 5.
+P5 Cili Ã«shtÃ« numri qÃ« mungon nÃ« ekuacion: 9 + __ = 11?
 a) 1
 b) 2
 c) 3
 d) 4
-2
-Shpjegimi: Për të gjetur numrin që mungon, zbuloni se sa më shumë 11 është nga 9. Prandaj, numri i humbur është 2, pasi 2 më shumë se 9 është 11. Pra, përgjigjja e saktë është 2.
-P6 Çfarë është 9 - 3?
+Shpjegim: PÃ«r tÃ« gjetur numrin qÃ« mungon, zbuloni sa mÃ« shumÃ« Ã«shtÃ« 11 nga 9. Prandaj, numri qÃ« mungon Ã«shtÃ« 2, pasi 2 mÃ« shumÃ« se 9 Ã«shtÃ« 11. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 2.
+Q6 Ã‡farÃ« Ã«shtÃ« 9 - 3?
 a) 3
 b) 4
 c) 5
 d) 6
-4
-Shpjegimi: Zbritja përfshin heqjen e një numri nga një tjetër. Për të zgjidhur 9 - 3, ju filloni me 9 dhe hiqni 3, duke ju lënë me 6. Pra, përgjigjja e saktë është 6.
-Q7 Nëse keni 7 mermere dhe ju dhuroni 2, sa mermere keni mbetur?
+Shpjegim: Zbritja pÃ«rfshin heqjen e njÃ« numri nga njÃ« tjetÃ«r. PÃ«r tÃ« zgjidhur 9 - 3, filloni me 9 dhe hiqni 3, duke ju lÃ«nÃ« 6. Pra, pÃ«rgjigjja e saktÃ« Ã«shtÃ« 6.
+Q7 NÃ«se keni 7 mermere dhe jepni 2, sa mermere ju mbeten?
 a) 3
 b) 4
 c) 5
 d) 6
-3
-Shpjegim: Kur ju jepni diçka larg, ju keni më pak nga ajo gjë. Pra, për të zbuluar se sa mermere keni lënë, ju zbritni numrin e dhënë (2) nga numri i përgjithshëm i mermereve (7). 7 - 2 është e barabartë me 5. Pra, përgjigjja e saktë është 5.
-Q8 Cila nga sa vijon është e njëjtë me 8 - 4?
+Shpjegim: Kur jep diÃ§ka, ke mÃ« pak nga ajo gjÃ«. Pra, pÃ«r tÃ« zbuluar se sa mermere ju kanÃ« mbetur, ju zbrisni numrin e dhÃ«nÃ« (2) nga numri i pÃ«rgjithshÃ«m i mermerÃ«ve (7). 7 - 2 Ã«shtÃ« 5. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 5.
+P8 Cila nga sa vijon Ã«shtÃ« e njÃ«jtÃ« me 8 - 4?
 a) 7 - 3
 b) 6 - 2
 c) 5 - 3
 d) 8 - 2
-1
-Shpjegimi: 7 - 3 është i njëjtë me 8 - 4. 8 Merrni 4 na jep 4, 7 Merrni 3 gjithashtu na jep 4, kështu që përgjigjja e saktë është një.
-Q9 Nëse ka 10 zogj në një pemë dhe 3 fluturojnë larg, sa zogj kanë mbetur në pemë?
+Shpjegim: 7 - 3 Ã«shtÃ« e njÃ«jtÃ« me 8 - 4. 8 heq 4 na jep 4, 7 heq 3 na jep gjithashtu 4, kÃ«shtu qÃ« pÃ«rgjigja e saktÃ« Ã«shtÃ« a.
+P9 NÃ«se ka 10 zogj nÃ« njÃ« pemÃ« dhe 3 fluturojnÃ« larg, sa zogj kanÃ« mbetur nÃ« pemÃ«?
 a) 5
 b) 6
 c) 7
 d) 8
-3
-Shpjegimi: Kur zogjtë fluturojnë larg, numri i përgjithshëm i zogjve zvogëlohet. Për të zbuluar se sa zogj kanë mbetur, ju zbritni numrin që fluturoi larg (3) nga numri i përgjithshëm i zogjve (10). 10 - 3 është e barabartë me 7. Pra, përgjigjja e saktë është 7.
-Q10 Cili është numri që mungon në ekuacionin: 6 - __ = 4?
+Shpjegim: Kur zogjtÃ« fluturojnÃ« larg, numri i pÃ«rgjithshÃ«m i zogjve zvogÃ«lohet. PÃ«r tÃ« zbuluar se sa zogj kanÃ« mbetur, ju zbritni numrin qÃ« fluturoi (3) nga numri i pÃ«rgjithshÃ«m i zogjve (10). 10 - 3 Ã«shtÃ« 7. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 7.
+P10 Cili Ã«shtÃ« numri qÃ« mungon nÃ« ekuacion: 6 - __ = 4?
 a) 1
 b) 2
 c) 3
 d) 4
-2
-Shpjegimi: Për të gjetur numrin që mungon, ju zbritni rezultatin e njohur nga numri i fillimit. Pra, 6 - 4 është e barabartë me 2. Prandaj, numri që mungon është 2. Pra, përgjigjja e saktë është 2.
-Q11 isfarë është 4 x 3?
+Shpjegim: PÃ«r tÃ« gjetur numrin qÃ« mungon, zbritni rezultatin e njohur nga numri fillestar. Pra, 6 - 4 Ã«shtÃ« 2. Prandaj, numri qÃ« mungon Ã«shtÃ« 2. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 2.
+Q11 Ã‡farÃ« Ã«shtÃ« 4 x 3?
 a) 6
 b) 7
 c) 10
 d) 12
-4
-Shpjegimi: Shumëzimi përfshin shtesë të përsëritur. Për të zgjidhur 4 x 3, ju shtoni 4 tre herë, 4 + 4 + 4 + 4 = 12. Pra, përgjigjja e saktë është 12.
-Q12 Nëse ka 5 lapsa në secilën pako dhe ka 4 pako, sa lapsa ka në total?
+Shpjegim: ShumÃ«zimi pÃ«rfshin mbledhje tÃ« pÃ«rsÃ«ritur. PÃ«r tÃ« zgjidhur 4 x 3, shtoni 4 tre herÃ«, 4 + 4 + 4 + 4 = 12. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 12.
+P12 NÃ«se ka 5 lapsa nÃ« Ã§do paketÃ« dhe ka 4 pako, sa lapsa ka gjithsej?
 a) 20
 b) 15
 c) 36
 d) 25
-1
-Shpjegimi: Për të zbuluar se sa lapsa ka në total, ju shumëzoni numrin e lapsave në secilën pako (5) me numrin e paketave (4). 5 x 4 është e barabartë me 20. Pra, përgjigjja e saktë është 20.
-Q13 Cila nga sa vijon është e njëjtë me 3 x 6?
+Shpjegim: PÃ«r tÃ« zbuluar se sa lapsa ka gjithsej, ju shumÃ«zoni numrin e lapsave nÃ« Ã§do paketÃ« (5) me numrin e paketave (4). 5 x 4 Ã«shtÃ« 20. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 20.
+P13 Cila nga sa vijon Ã«shtÃ« e njÃ«jtÃ« me 3 x 6?
 a) 9 x 2
 b) 12 x 3
 c) 4 x 4
 d) 7 x 2
-1
-Shpjegimi: 3 i zhdukur nga 6 na jep 18, 9 shumëzuar me 2 gjithashtu na jep 18. Pra, përgjigjja e saktë është një.
-Q14 Nëse ka 8 studentë në secilën rresht dhe ka 3 rreshta, sa studentë ka në total?
+Shpjegim: 3 e shumÃ«zuar me 6 na jep 18, 9 e shumÃ«zuar me 2 na jep gjithashtu 18. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« a.
+P14 NÃ«se ka 8 nxÃ«nÃ«s nÃ« Ã§do rresht dhe ka 3 rreshta, sa nxÃ«nÃ«s ka gjithsej?
 a) 16
 b) 20
 c) 24
 d) 32
-3
-Shpjegimi: Për të zbuluar se sa studentë janë në total, ju shumëfishoni numrin e studentëve në secilën rresht (8) me numrin e rreshtave (3). 8 x 3 është e barabartë me 24. Pra, përgjigjja e saktë është 24.
-Q15 Cili është numri që mungon në ekuacionin: 7 x __ = 21?
+Shpjegim: PÃ«r tÃ« zbuluar se sa nxÃ«nÃ«s ka gjithsej, ju shumÃ«zoni numrin e nxÃ«nÃ«sve nÃ« Ã§do rresht (8) me numrin e rreshtave (3). 8 x 3 Ã«shtÃ« 24. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 24.
+P15 Cili Ã«shtÃ« numri qÃ« mungon nÃ« ekuacion: 7 x __ = 21?
 a) 4
 b) 3
 c) 2
 d) 1
-2
-Shpjegimi: Për të gjetur numrin që mungon, ju e ndani rezultatin e njohur me numrin e fillimit. Pra, 21 i ndarë me 7 është i barabartë 3. Prandaj, numri i humbur është 3. Pra, përgjigjja e saktë është 3.
-Q16 isfarë është 12 e ndarë me 3?
+Shpjegim: PÃ«r tÃ« gjetur numrin qÃ« mungon, rezultatin e njohur e pjesÃ«toni me numrin fillestar. Pra, 21 pjesÃ«tuar me 7 Ã«shtÃ« 3. Prandaj, numri qÃ« mungon Ã«shtÃ« 3. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 3.
+P16 Sa Ã«shtÃ« 12 pjesÃ«tuar me 3?
 a) 2
 b) 3
 c) 4
 d) 6
-3
-Shpjegimi: Ndarja është operacioni i kundërt i shumëzimit. Për të zgjidhur 12 të ndarë me 3, duhet të zbuloni se sa grupe prej 3 janë atje në 12. Meqenëse 12 mund të ndahen në 4 grupe të 3. Pra, përgjigjja është 4.
-Q17 Nëse ka 15 karamele dhe ato ndahen në mënyrë të barabartë midis 5 miqve, sa ëmbëlsira merr secili mik?
+Shpjegim: Pjestimi Ã«shtÃ« veprim i kundÃ«rt i shumÃ«zimit. PÃ«r tÃ« zgjidhur 12 tÃ« pjesÃ«tuar me 3, duhet tÃ« zbuloni sa grupe me 3 ka nÃ« 12. MeqenÃ«se 12 mund tÃ« ndahen nÃ« 4 grupe me nga 3. Pra, pÃ«rgjigja Ã«shtÃ« 4.
+P17 NÃ«se ka 15 karamele dhe ato ndahen nÃ« mÃ«nyrÃ« tÃ« barabartÃ« mes 5 miqve, sa karamele merr secili shok?
 a) 2
 b) 3
 c) 4
 d) 5
-2
-Shpjegimi: Divizioni ka të bëjë me ndarjen në mënyrë të barabartë. Për të zbuluar se sa ëmbëlsira merr çdo mik, ju ndani numrin e përgjithshëm të ëmbëlsirave (15) me numrin e miqve (5). 15 e ndarë me 5 është e barabartë me 3. Pra, përgjigjja e saktë është 3.
-Q18 Cila nga sa vijon është e njëjtë me 20 të ndara me 4?
-a) 100 i ndarë me 25
-b) 50 e ndarë me 10
-c) 6 i ndarë me 3
-d) 7 i ndarë me 1
-2
-Shpjegimi: Ndarja është e kundërta e shumëzimit. Pra, për të zbuluar se çfarë 20 të ndara me 4 të barabartë, ju mund të mendoni për grupe prej 4 shkon në 20. Pra, rezultati është 5, 50 i ndarë me 10 na jep 5. Pra, përgjigjja është b
-Q19 Nëse ka 24 mollë dhe ato vendosen në 6 shporta në mënyrë të barabartë, sa mollë ka në secilën shportë?
+Shpjegim: Ndarja ka tÃ« bÃ«jÃ« me ndarjen nÃ« mÃ«nyrÃ« tÃ« barabartÃ«. PÃ«r tÃ« zbuluar se sa karamele merr Ã§do mik, ju pjesÃ«toni numrin e pÃ«rgjithshÃ«m tÃ« Ã«mbÃ«lsirave (15) me numrin e miqve (5). 15 pjesÃ«tuar me 5 Ã«shtÃ« 3. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 3.
+P18 Cila nga sa vijon Ã«shtÃ« e njÃ«jtÃ« me 20 pjesÃ«tuar me 4?
+a) 100 pjesÃ«tuar me 25
+b) 50 pjesÃ«tuar me 10
+c) 6 pjesÃ«tuar me 3
+d) 7 pjesÃ«tuar me 1
+Shpjegim: PjesÃ«timi Ã«shtÃ« e kundÃ«rta e shumÃ«zimit. Pra, pÃ«r tÃ« zbuluar se Ã§farÃ« Ã«shtÃ« e barabartÃ« 20 e pjesÃ«tuar me 4, mund tÃ« mendoni pÃ«r grupet me 4 shkon nÃ« 20. Pra, rezultati Ã«shtÃ« 5, 50 pjesÃ«tuar me 10 na jep 5. Pra, pÃ«rgjigja Ã«shtÃ« b
+P19 NÃ«se ka 24 mollÃ« dhe ato vendosen nÃ« 6 kosha nÃ« mÃ«nyrÃ« tÃ« barabartÃ«, sa mollÃ« ka nÃ« secilÃ«n shportÃ«?
 a) 2
 b) 4
 c) 6
 d) 8
-2
-Shpjegimi: Divizioni ka të bëjë me ndarjen në mënyrë të barabartë. Për të zbuluar se sa mollë ka në secilën shportë, ju ndani numrin e përgjithshëm të mollëve (24) me numrin e shportave (6). 24 e ndarë me 6 është e barabartë me 4. Pra, përgjigjja e saktë është 4.
-Q20 Cili është numri që mungon në ekuacionin: 15 i ndarë me __ = 3?
+Shpjegim: Ndarja ka tÃ« bÃ«jÃ« me ndarjen nÃ« mÃ«nyrÃ« tÃ« barabartÃ«. PÃ«r tÃ« zbuluar se sa mollÃ« ka nÃ« secilÃ«n shportÃ«, pjesÃ«toni numrin e pÃ«rgjithshÃ«m tÃ« mollÃ«ve (24) me numrin e koshave (6). 24 pjesÃ«tuar me 6 Ã«shtÃ« 4. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 4.
+P20 Cili Ã«shtÃ« numri qÃ« mungon nÃ« ekuacion: 15 pjesÃ«tohet me __ = 3?
 a) 2
 b) 3
 c) 4
 d) 5
-4
-Shpjegimi: Për të gjetur numrin që mungon, ju e ndani rezultatin e njohur nga përgjigja. Pra, 15 i ndarë me 3 të barabartë 5. Prandaj, numri i humbur është 5. Pra, përgjigjja e saktë është 5.
-Ju keni mbaruar çdo nivel
-Ju keni anashkaluar nivelin (et)
-Kuptimi i aritmetikës: Përvoja interaktive
-Statistikë
-Përgjigjet e sakta:
-Përgjigje të pasakta:
+Shpjegim: PÃ«r tÃ« gjetur numrin qÃ« mungon, rezultatin e njohur e pjesÃ«toni me pÃ«rgjigjen. Pra, 15 pjesÃ«tuar me 3 Ã«shtÃ« 5. Prandaj, numri qÃ« mungon Ã«shtÃ« 5. Pra, pÃ«rgjigja e saktÃ« Ã«shtÃ« 5.
+Ju keni pÃ«rfunduar Ã§do nivel
+Ju keni kapÃ«rcyer nivelet
+TÃ« kuptuarit e aritmetikÃ«s: PÃ«rvoja ndÃ«rvepruese
+Statistikat
+PÃ«rgjigjet e sakta:
+PÃ«rgjigje tÃ« pasakta:
+SaktÃ«sia juaj Ã«shtÃ«
+Rezultati juaj Ã«shtÃ«

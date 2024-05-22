@@ -6,14 +6,11 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 import googletrans
 import pyttsx3
-import time
-
-
 
 
 
 #configurations of the program
-fullscreen = True
+fullscreen = False
 language = "english"
 
 ##setting many veriables to the same value
@@ -100,7 +97,7 @@ def read_text():
     try:
         fullscreen_checkbox.configure(text = text_file[5])
         apply_button.configure(text = text_file[6])
-        root.title(text_file[150])
+        root.title(text_file[130])
     except: pass
 
 
@@ -146,7 +143,7 @@ def text_to_speech(text):
 
 #this function scales all objects on the current screen to fit the resolution picked by the user
 #the veriable event is assigned to the passed values
-def scaler(event):                                                                    
+def scaler(event):                                                                   
     global avg_multi, newx_multi
 
     #setting up new values for the width and height of the program and averaging values using basic math
@@ -158,12 +155,15 @@ def scaler(event):
 
     #checks which screen the scaler needs to affect and applies the changes accordingly, the manual line by line method could've been
     #done in a shorter way using lists to hold all button data but at the cost of readability of code *note, future update could implement that
+    try:
+        image = copy_of_image.resize((new_width,new_height))                                       #resizes image
+        photo = ImageTk.PhotoImage(image)
+        background.config(image = photo)                                                           #configures/updates the background image
+        background.image = photo
+    except: pass
+
     if menu_screen_state == True:
         try:
-            MS_image = MS_copy_of_image.resize((new_width,new_height))                                       #resizes image
-            MS_photo = ImageTk.PhotoImage(MS_image)
-            MS_background.config(image = MS_photo)                                                           #configures/updates the background image
-            MS_background.image = MS_photo 
             start_button.configure(font=("Comic Sans MS Bold",50*avg_multi), width = 140*newx_multi, height = 42*newy_multi) 
             options_button.configure(font=("Comic Sans MS Bold",50*avg_multi), width = 140*newx_multi, height = 42*newy_multi)
             exit_button.configure(font=("Comic Sans MS Bold",50*avg_multi), width = 140*newx_multi, height = 42*newy_multi)       #adjusts text size to match the screen resolution
@@ -173,10 +173,6 @@ def scaler(event):
             pass
     if options_menu_state == True:
         try:
-            OS_image = OS_copy_of_image.resize((new_width,new_height))
-            OS_photo = ImageTk.PhotoImage(OS_image)
-            OS_background.config(image = OS_photo)
-            OS_background.image = OS_photo 
             apply_button.configure(font=("Comic Sans MS Bold",50*newx_multi))
             fullscreen_checkbox.configure(font=("Comic Sans MS Bold",50*newx_multi))
             translated_combo.configure(font=("Comic Sans MS Bold",50*newx_multi))
@@ -184,10 +180,6 @@ def scaler(event):
             pass
     if level_selection_state == True:
         try:
-            LS_image = LS_copy_of_image.resize((new_width,new_height))
-            LS_photo = ImageTk.PhotoImage(LS_image)
-            LS_background.config(image = LS_photo)
-            LS_background.image = LS_photo 
             title3.configure(font=("Comic Sans MS Bold",120*avg_multi))
             for i in lvl_list:
                 lvl_list[i].configure(font=("Comic Sans MS Bold",50*avg_multi), width = 140*newx_multi, height = 42*newy_multi)
@@ -195,10 +187,6 @@ def scaler(event):
             pass
     if level_menu_state == True:
         try:
-            LM_image = LM_copy_of_image.resize((new_width,new_height))
-            LM_photo = ImageTk.PhotoImage(LM_image)
-            LM_background.config(image = LM_photo)
-            LM_background.image = LM_photo
             question.configure(font=("Comic Sans MS Bold",45*avg_multi), wraplength = 855*newx_multi)
             answer3.configure(font=("Comic Sans MS Bold",45*avg_multi), width = newx_multi*375, height = newy_multi*113)
             answer1.configure(font=("Comic Sans MS Bold",45*avg_multi), width = newx_multi*375, height = newy_multi*113)
@@ -215,7 +203,7 @@ def scaler(event):
 #*note, currently the only sender screen is the menu screen
 def options_menu():
 
-    global language_list, translated_combo, languages, options_menu_state, OS_background, OS_copy_of_image, back_button
+    global language_list, translated_combo, languages, options_menu_state, background, copy_of_image, back_button
     global options_frame, back_button_options_menu, apply_button, fullscreen_checkbox, level_selection_state, menu_screen_state
 
     #resetting flags, lets the program know what is happening
@@ -225,16 +213,16 @@ def options_menu():
 
     #clears the previous gui
     start_menu_frame.destroy()
-    MS_background.destroy()
+    background.destroy()
     icon_button.destroy()
     
     #sets the background image found in images directory in the parent folder
-    OS_image = Image.open("images\options_menu.png")                                           #opens the image file
-    OS_copy_of_image = OS_image.copy()                                                         #creates a copy of the image file
-    OS_photo = ImageTk.PhotoImage(OS_image)
-    OS_background = Label(root, image = OS_photo)                                              #Assigns the image to the label
-    OS_background.bind("<Configure>", scaler)                                                  #Configures the image to the screen
-    OS_background.pack(fill=BOTH, expand = YES) 
+    image = Image.open("images\options_menu.png")                                           #opens the image file
+    copy_of_image = image.copy()                                                         #creates a copy of the image file
+    photo = ImageTk.PhotoImage(image)
+    background = Label(root, image = photo)                                              #Assigns the image to the label
+    background.bind("<Configure>", scaler)                                                  #Configures the image to the screen
+    background.pack(fill=BOTH, expand = YES) 
 
     #assigning the frame on the current menu, probably couldve used the same frame for all screens since its only used locally
     #but for better readability of code, it is seperate.
@@ -244,12 +232,12 @@ def options_menu():
     #Setting up the checkbox for toggling fullscreen and applying the corect status of the checkbox
     #by using the flag veriable assigned before
     fullscreen_checkbox = customtkinter.CTkCheckBox(options_frame, text=text_file[5], command=switch_screen_toggle, hover_color="#D3D3D3",font=("Comic Sans MS Bold",30), text_color="#453735")
-    fullscreen_checkbox.pack(padx=20 ,pady = 20,fill=BOTH, expand = YES)
+    fullscreen_checkbox.pack(padx=20, pady=20,fill=BOTH, expand = YES)
     if fullscreen == True:
         fullscreen_checkbox.select()
 
     #adding a combobox to the frame to select a language (default is english)
-    translated_combo=customtkinter.CTkComboBox(options_frame, values=language_list, font=("Comic Sans MS Bold",30), text_color="#453735", fg_color ="#D3D3D3", state= "readonly")
+    translated_combo=ttk.Combobox(options_frame, values=language_list, font=("Comic Sans MS Bold",20), foreground="#453735", state= "readonly", width=11)
     translated_combo.set(language)
     translated_combo.pack(padx=20 ,fill=BOTH, expand = YES)
     
@@ -332,7 +320,7 @@ def next(choice):
     else:
         #places the explanation to the answer and counts the incorrect answer(s)
         if J != L:
-            explanation = customtkinter.CTkLabel(master = root, text=text_file[14+7*(L-1)], text_color="Black", fg_color= "#F1EDE3", font=("Comic Sans MS Bold",25), wraplength = 870)
+            explanation = customtkinter.CTkLabel(master = root, text=text_file[13+6*(L-1)], text_color="Black", fg_color= "#F1EDE3", font=("Comic Sans MS Bold",25), wraplength = 870)
             explanation.place(relx = 0.5, rely = 0.85, anchor = CENTER)
             J = L
             incorrect_counter += 1
@@ -360,16 +348,16 @@ def next(choice):
 
 #this function is the menu for all the levels, depending on what lvl is sent to the function
 def level_menu(lvl):
-    global LM_background, level_selection_frame, LM_copy_of_image, level_menu_state, level_selection_state, question, answer4, answer1, answer2, answer3, L, correct_answer, level_menu_frame
+    global background, level_selection_frame, copy_of_image, level_menu_state, level_selection_state, question, answer4, answer1, answer2, answer3, L, correct_answer, level_menu_frame
 
     #depending on the screen the level menu was requested from, the previous screen GUI
     #elements gets destoryed.
     if level_selection_state == True:
-        LS_background.destroy()
+        background.destroy()
         level_selection_frame.destroy()
 
     if level_menu_state == True:
-        LM_background.destroy()
+        background.destroy()
         level_menu_frame.destroy()
 
     #sets the flag veriables for the screen states
@@ -379,13 +367,13 @@ def level_menu(lvl):
     #placeholder for the current level
     L = lvl
 
-    LM_image = Image.open("images\level_menu.png")                                           #opens the image file
-    LM_copy_of_image = LM_image.copy()                                                                #creates a copy of the image file
-    LM_copy_of_image = LM_image.copy()                                                       #creates a copy of the image file
-    LM_photo = ImageTk.PhotoImage(LM_image)
-    LM_background = Label(root, image = LM_photo)                                                          #Assigns the image to the label
-    LM_background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
-    LM_background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
+    image = Image.open("images\level_menu.png")                           #opens the image file
+    copy_of_image = image.copy()                                          #creates a copy of the image file
+    copy_of_image = image.copy()                                          #creates a copy of the image file
+    photo = ImageTk.PhotoImage(image)
+    background = Label(root, image = photo)                               #Assigns the image to the label
+    background.bind("<Configure>", scaler)                                #Configures the image to the screen
+    background.pack(fill=BOTH, expand = YES)                              #packs the label onto the GUI
 
     #setting up the frame and places background onto the screen
     level_menu_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="#F1EDE3", fg_color="light grey", border_color="grey")
@@ -396,46 +384,39 @@ def level_menu(lvl):
     
 
     #setting up and placing the questions and multiple choice answers onto the GUI
-    question = customtkinter.CTkLabel(master = root, text=text_file[8+7*(lvl-1)], font=("Comic Sans MS Bold",30), wraplength=855, text_color="black", fg_color= "white")
+    question = customtkinter.CTkLabel(master = root, text=text_file[8+6*(lvl-1)], font=("Comic Sans MS Bold",30), wraplength=855, text_color="black", fg_color= "white")
     question.place(relx = 0.5, rely = 0.185, anchor = CENTER)
 
-    answer1 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[9+7*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(1))
+    answer1 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[9+6*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(1))
     answer1.grid(padx = 20, pady = 20, row = 0, column = 0 )
 
-    answer2 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[10+7*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(2))
+    answer2 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[10+6*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(2))
     answer2.grid(padx = 20, pady = 20, row = 0, column = 1 )
 
-    answer3 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[11+7*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(3))
+    answer3 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[11+6*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(3))
     answer3.grid(padx = 20, pady = 20, row = 1, column = 0 )
 
-    answer4 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[12+7*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(4))
+    answer4 = customtkinter.CTkButton(master = level_menu_frame, text = text_file[12+6*(lvl-1)], text_color="white", fg_color= "grey", hover_color="blue", anchor=W, command= lambda:next(4))
     answer4.grid(padx = 20, pady = 20, row = 1, column = 1 )
 
     
+    #setting up and placing the fullscreem toggle button
+    icon = Image.open("images\maximise_nav.png")                                                    #Maximise/minimise icon
+    icon = icon.resize((30,30))
+    icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
+    icon_button.place(x=5, y=5) 
 
-    LM_icon = Image.open("images\maximise_nav.png")                                                    #Maximise/minimise icon
-    LM_icon = LM_icon.resize((30,30))
-    LM_icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
-    LM_icon_button.place(x=5, y=5) 
+    #configures and places the icon that speaks the text on the screen
+    speak = Image.open("images\speak.png")                                                    #Maximise/minimise speak
+    speak = speak.resize((40,40))
+    speak_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(speak), command=lambda:text_to_speech(text_file[8+6*(lvl-1)]), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
+    speak_button.place(relx=0.5, rely=0.348, anchor = CENTER) 
 
-    #configures the icon that speaks the text on the screen
-    LM_speak = Image.open("images\speak.png")                                                    #Maximise/minimise speak
-    LM_speak = LM_speak.resize((40,40))
-    LM_speak_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_speak), command=lambda:text_to_speech(text_file[8+7*(lvl-1)]), text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
-    LM_speak_button.place(relx=0.5, rely=0.348, anchor = CENTER) 
-
-    #configures the back button
-    LM_back_button = Image.open("images\Back.png")
-    LM_back_button = LM_back_button.resize((50,50))
-    LM_back_button_options_menu = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LM_back_button), command=level_selection, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
-    LM_back_button_options_menu.place(relx=0.03, rely=0.95, anchor= CENTER)
-    
-    
-    
-
-
-
-
+    #configures and places the back button
+    back_button = Image.open("images\Back.png")
+    back_button = back_button.resize((50,50))
+    back_button_options_menu = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(back_button), command=level_selection, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
+    back_button_options_menu.place(relx=0.03, rely=0.95, anchor= CENTER)
 
 
 
@@ -448,26 +429,26 @@ def stats_menu():
         stats = customtkinter.CTkToplevel(master = root, takefocus = True)
         stats.geometry('500x200')
         stats.grab_set()
-        stats.title(text_file[151])
-        correct_text = text_file[152]+" "+str(correct_counter)
-        incorrect_text = text_file[153]+" "+str(incorrect_counter)
+        stats.title(text_file[131])
+        correct_text = text_file[132]+" "+str(correct_counter)
+        incorrect_text = text_file[133]+" "+str(incorrect_counter)
         correct = customtkinter.CTkLabel(master = stats, text = correct_text, font = (None, 25))
         incorrect = customtkinter.CTkLabel(master = stats, text = incorrect_text, font =  (None, 25))
         correct.pack()
         incorrect.pack()
 
-        accuracy = "Your accuracy is "+str(float(correct_counter/(correct_counter + incorrect_counter))*100)+"%"
+        accuracy = text_file[134]+" "+str(float(correct_counter/(correct_counter + incorrect_counter))*100)+"%"
         accuracy_label = customtkinter.CTkLabel(master = stats, text = accuracy, font =  (None, 25))
         accuracy_label.pack()
 
-        result = "Your result is "+str(float(correct_counter/20)*100)+"%"
+        result = text_file[135]+" "+str(float(correct_counter/20)*100)+"%"
         result_label = customtkinter.CTkLabel(master = stats, text = result, font =  (None, 25))
         result_label.pack()
 
         if correct_counter != 20:
-            final_msg = text_file[149]
+            final_msg = text_file[129]
         else:
-            final_msg = text_file[148]
+            final_msg = text_file[128]
         final_msg_label = customtkinter.CTkLabel(master = stats, text = final_msg, font =  (None, 25))
         final_msg_label.pack()
 
@@ -491,28 +472,28 @@ def stats_menu():
 
 
 def level_selection():
-    global LS_background, start_menu_frame, LS_copy_of_image, title3, level_selection_state, level_selection_frame, menu_screen_state, options_menu_state, LS_back_button_options_menu
+    global background, start_menu_frame, copy_of_image, title3, level_selection_state, level_selection_frame, menu_screen_state, options_menu_state, back_button_options_menu
     global incorrect_counter, correct_counter
     global L, lvl_list
     
 
     if menu_screen_state == True:
         try:
-            MS_background.destroy()
+            background.destroy()
             start_menu_frame.destroy()
         except: pass
 
     if level_menu_state == True:
         try:
-            LM_background.destroy()
+            background.destroy()
         except: pass
 
-    LS_image = Image.open("images\level_selection.png")                                           #opens the image file
-    LS_copy_of_image = LS_image.copy()                                                                #creates a copy of the image file
-    LS_photo = ImageTk.PhotoImage(LS_image)
-    LS_background = Label(root, image = LS_photo)                                                          #Assigns the image to the label
-    LS_background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
-    LS_background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
+    image = Image.open("images\level_selection.png")                                           #opens the image file
+    copy_of_image = image.copy()                                                                #creates a copy of the image file
+    photo = ImageTk.PhotoImage(image)
+    background = Label(root, image = photo)                                                          #Assigns the image to the label
+    background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
+    background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
 
     level_selection_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="#F1EDE3", fg_color="light grey", border_color="grey")
     level_selection_frame.place(relx=0.5, rely = 0.6, anchor = CENTER)                                                      #Frame in the start_menu
@@ -520,10 +501,10 @@ def level_selection():
     title3 = customtkinter.CTkLabel(master = root, text = text_file[7], font=("Comic Sans MS Bold",120), text_color="#453735", fg_color="#F1EDE3")
     title3.place(relx = 0.5, rely = 0.12, anchor = CENTER)
 
-    LS_back_button = Image.open("images\Back.png")
-    LS_back_button = LS_back_button.resize((50,50))
-    LS_back_button_options_menu = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LS_back_button), command=menu_screen, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
-    LS_back_button_options_menu.place(relx=0.03, rely=0.95, anchor= CENTER)
+    back_button = Image.open("images\Back.png")
+    back_button = back_button.resize((50,50))
+    back_button_options_menu = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(back_button), command=menu_screen, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
+    back_button_options_menu.place(relx=0.03, rely=0.95, anchor= CENTER)
 
     lvl1 = customtkinter.CTkButton(master = level_selection_frame, text="1", font=("Comic Sans MS Bold",50), hover_color="blue", fg_color="grey", command= lambda:level_menu(1))
     lvl2 = customtkinter.CTkButton(master = level_selection_frame, text="2", font=("Comic Sans MS Bold",50), hover_color="blue", fg_color="grey", command= lambda:level_menu(2))
@@ -586,31 +567,31 @@ def level_selection():
     options_menu_state = False
     level_selection_state = True
 
-    LS_icon = Image.open("images\maximise_nav.png")                                                    #Maximise/minimise icon
-    LS_icon = LS_icon.resize((30,30))
-    LS_icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(LS_icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
-    LS_icon_button.place(x=5, y=5)                                                                 #Icon is an interactive toggle button
+    icon = Image.open("images\maximise_nav.png")                                                    #Maximise/minimise icon
+    icon = icon.resize((30,30))
+    icon_button = customtkinter.CTkButton(root, image=ImageTk.PhotoImage(icon), command=switch_screen_toggle, text="", width=0, fg_color="#F1EDE3", corner_radius=0, hover=DISABLED)
+    icon_button.place(x=5, y=5)                                                                 #Icon is an interactive toggle button
 
 
 def menu_screen():
-    global MS_background, start_button, options_button, exit_button, start_menu_frame, MS_copy_of_image, icon, icon_button, menu_screen_state, options_menu_state, title1, title2, level_selection_state, level_menu_state
+    global background, start_button, options_button, exit_button, start_menu_frame, copy_of_image, icon, icon_button, menu_screen_state, options_menu_state, title1, title2, level_selection_state, level_menu_state
 
 
     if options_menu_state == True:
         try:
-            OS_background.destroy()
+            background.destroy()
             options_frame.destroy()                
         except: pass
 
     if level_selection_state == True:
         try:
-            LS_background.destroy()
-            LS_back_button_options_menu.destroy()
+            background.destroy()
+            back_button_options_menu.destroy()
         except: pass
 
     if level_menu_state == True:
         try:
-            LM_background.destroy()
+            background.destroy()
         except: pass
     
     
@@ -621,12 +602,12 @@ def menu_screen():
     level_menu_state= False
 
 
-    MS_image = Image.open("images\Learn_Arithmetic.png")                                           #opens the image file
-    MS_copy_of_image = MS_image.copy()                                                                #creates a copy of the image file
-    MS_photo = ImageTk.PhotoImage(MS_image)
-    MS_background = Label(root, image = MS_photo)                                                          #Assigns the image to the label
-    MS_background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
-    MS_background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
+    image = Image.open("images\Learn_Arithmetic.png")                                           #opens the image file
+    copy_of_image = image.copy()                                                                #creates a copy of the image file
+    photo = ImageTk.PhotoImage(image)
+    background = Label(root, image = photo)                                                          #Assigns the image to the label
+    background.bind("<Configure>", scaler)                                                     #Configures the image to the screen
+    background.pack(fill=BOTH, expand = YES)                                                         #packs the label onto the GUI
 
     start_menu_frame = customtkinter.CTkFrame(master=root, border_width=5, corner_radius=30, bg_color="white", fg_color="light grey", border_color="grey")
     start_menu_frame.place(relx=0.45, rely = 0.7, anchor = CENTER)                                                      #Frame in the start_menu
@@ -653,9 +634,7 @@ def menu_screen():
 
 
 
-menu_screen()
-
-                                        
+menu_screen()                            
 
 
 root.mainloop()

@@ -11,7 +11,6 @@ a) 8
 b) 7
 c) 6
 d) 9
-1
 Erklärung: Zousätzlech implizéiert zwee oder méi Zuelen ze kombinéieren fir den Total ze fannen. 5 + 3 + 3 ze léisen, zielt Dir 5, zielt dann 3 méi, wat gläicht 8. sou, déi richteg Äntwert 8 ass 8.
 Q2 Wann Dir 4 Äppel hutt an Dir kritt 2 méi, wéivill Äppel hutt Dir ganz?
 a) 4
@@ -25,7 +24,6 @@ a) 5 + 2
 b) 6 + 3
 c) 7 + 4
 d) 4 + 4 
-4
 Erklärung: 4 + 4 ass d'selwecht wéi 2 + 6. Roming 4 méi vun 4 gëtt eis 8. sou, déi richteg Äntwert ass d.
 Q4 Wann Dir 7 Candies hutt an Dir iesst 2 vun hinnen, wéivill Klauen hutt Dir fort?
 a) 3
@@ -39,14 +37,12 @@ a) 1
 b) 2
 c) 3
 d) 4
-2
 Erklärung: Fir déi fehlend Nummer ze fannen, fannt Dir eraus wéi vill méi 11 ass, ass déi fehlend Zuel 2, zënter 2 méi wéi 9 ass, déi richteg Äntwert ass 2.
 Q6 Wat ass 9 - 3?
 a) 3
 b) 4
 c) 5
 d) 6
-4
 Erklärung: Suivatioun involvéiert eng Zuel vun engem aneren ewechzehuelen. 9 - 3 ze léisen - 3, Dir fänkt mat 9 un an huelt Iech ewech, gitt Iech mat 6. Also, déi richteg Äntwert 6.
 Q7 Wann Dir 7 Marmer hutt an Dir gitt 2, wéivill Marmer hutt Dir lénks?
 a) 3
@@ -60,7 +56,6 @@ a) 7 - 3
 b) 6 - 2
 c) 5 - 3
 d) 8 - 2
-1
 Erklärung: 7 - 3 ass d'selwecht wéi 8 - 4. 8 huelen 4, 4, 7, 7 ewechhuelen 3 huelen eis och 4, sou datt déi richteg Äntwert gëtt a.
 Q9 Wann et 10 Villercher op engem Bam sinn an 3 Fléi ewech, wéivill Villercher sinn um Bam hannerlooss?
 a) 5
@@ -74,28 +69,24 @@ a) 1
 b) 2
 c) 3
 d) 4
-2
 Erklärung: Fir déi fehlend Zuel ze fannen, Dir kënnt de bekannte Resultat aus der Startnummer subtractéieren. Also, 6 - 4 Gläichheet 2. Dofir ass déi fehlend Zuel 2. Also, déi richteg Äntwert 2.
 Q11 Wat ass 4 x 3?
 a) 6
 b) 7
 c) 10
 d) 12
-4
 Erklärung: Multiplikatioun implizéiert widderholl Zousätzlech. Fir 4 x 3 ze léisen, füügt Dir 4 dräimol, 4 + 4 + 4 + 4 = 12 = sou, déi richteg Äntwert ass 12.
 Q12 Wann et 5 Bleistift an all Pak sinn an et sinn 4 Packen, wéivill Bleistift sinn et am Ganzen?
 a) 20
 b) 15
 c) 36
 d) 25
-1
 Erklärung: Fir erauszefannen wéivill Bleistifter do am Ganzen ass, da multiple d'Zuel vu Bleistift an all Pack (5) duerch d'Zuel vun de Packs (4). 5 x 4 Gläich 20. Also ass déi richteg Äntwert 20.
 Q13 Wat fir eng vun de folgenden ass d'selwecht wéi 3 x 6?
 a) 9 x 2
 b) 12 x 3
 c) 4 x 4
 d) 7 x 2
-1
 Erklärung: 3 mutlippledied vu 6 gëtt eis 18, 9 multiplizéiert vun 2 gëtt eis och d'US 18. Also, déi richteg Äntwert ass a.
 Q14 Wann et 8 Studenten an all Zeilen sinn an et sinn 3 Reihen, wéivill Studente ginn et am Ganzen?
 a) 16
@@ -109,7 +100,6 @@ a) 4
 b) 3
 c) 2
 d) 1
-2
 Erklärung: Fir déi fehlend Zuel ze fannen, déi Dir de bekannte Resultat duerch d'Startnummer trennt. Also, 21 opgedeelt vu 7 Gläichungen 3. Dofir ass déi fehlend Zuel 3. Also, déi richteg Äntwert 3.
 Q16 Wat ass 12 gedeelt duerch 3?
 a) 2
@@ -123,28 +113,24 @@ a) 2
 b) 3
 c) 4
 d) 5
-2
 Erklärung: Divisioun ass amgaang gläich ze deelen. Fir erauszefannen wéivill Kornies all Frënd kritt, gëtt Dir d'Total Zuel vun de Candies (15) duerch d'Zuel vu Frënn (5). 15 gedeelt duerch 5 Gläich 3 3. Also, déi richteg Äntwert ass 3.
 Q18 Wat fir eng vun de folgenden ass d'selwecht wéi 20 gedeelt duerch 4?
 a) 100 gedeelt duerch 25
 b) 50 gedeelt duerch 10
 c) 6 gedeelt duerch 3
 d) 7 gedeelt duerch 1
-2
 Erklärung: Divisioun ass de Géigendeel vu Multiplikatioun. Also, erauszefannen wat 20 gedeelt duerch 4 Gläichheeten, kënnt Dir iwwer d'Gruppe vu 4 a 20. sinn, ass d'Resultat 5, 50 gëtt bis 10 opgedeelt. D'Äntwert ass b
 Q19 Wann et 24 Äppel sinn a si ginn an 6 Kuerf gläich gesat, wéivill Äppel sinn do an all Kuerf?
 a) 2
 b) 4
 c) 6
 d) 8
-2
 Erklärung: Divisioun ass amgaang gläich ze deelen. Fir erauszefannen wéi vill Äppel do an all Kuerf ass, trennt Dir d'Gesamtzuel vun Äppel (24) duerch d'Zuel vu Kuerf (6). 24 gedeelt duerch 6 Gläichen 4. Also, déi richteg Äntwert ass 4.
 Q20 Wat ass déi fehlend Nummer an der Equatioun: 15 gedeelt duerch __ = 3?
 a) 2
 b) 3
 c) 4
 d) 5
-4
 Erklärung: Fir déi fehlend Zuel ze fannen, deelt Dir dat bekanntt Resultat duerch d'Äntwert. Also, 15 gedeelt duerch 3 Gläichen 5. Dofir ass déi fehlend Zuel 5. sou, déi richteg Äntwert ass 5.
 Dir hutt all Niveau fäerdeg
 Dir hutt Niveau (en) iwwersprongen
@@ -152,3 +138,5 @@ Verständnis Arithmetics: Interaktiv Erfahrung
 Statistiken
 Richteg Äntwerten:
 Falscht Äntwerten:
+Är Richtegkeet ass
+Äert Resultat ass
