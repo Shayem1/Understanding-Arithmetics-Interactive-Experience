@@ -1,3 +1,7 @@
+![Question](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/1128d169-403e-4bcf-943f-c676c15bb0d9)
+![Screenshot 2024-05-25 214125](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/b140ca8c-931c-45db-96ba-755a909b95be)
+![Screenshot 2024-05-25 213819](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/a44f7a08-85ca-4957-a5da-e0fae98a217a)
+![Screenshot 2024-05-25 213934](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/4d42a5a0-9591-4501-bb95-640cf2593758)
 This program is intended for grades 1-2. Involves simple addition, subtraction, 
 multiplication and division alongside worded problems
 
@@ -22,7 +26,7 @@ Recommended requirements:
 
 Installation:
 Automatic/install and run
-Download the zip and extract files
+Download the zip and extract files [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/download/untagged-485cf5b7ab9f6b633618/Program.executable.zip)
 - Go to "Program exe\dist\Program main.exe" and run normally
 
 Manual    
