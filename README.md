@@ -95,3 +95,7 @@ Acknowledgements:
 
 - UTF-8 encoder and decoder to store and retrieve complex characters
 
+
+**To run
+
+- Go to "Program exe\dist\Program main.exe" and run normally

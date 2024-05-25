@@ -29,9 +29,8 @@ root.title('Understanding Arithmetics: Interactive Experience')
 root.geometry("1280x720")
 root.minsize(width=1280, height=720)
 root.iconbitmap("images\program_icon.ico")
-dpi = root.winfo_pixels('1i')
-print(dpi)
 customtkinter.deactivate_automatic_dpi_awareness()
+
 #Obtains languages from google translate and puts them in a list
 language_list=[
 'afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'azerbaijani', 'basque', 'belarusian', 'bengali', 'bosnian', 'bulgarian', 'catalan', 'cebuano', 
