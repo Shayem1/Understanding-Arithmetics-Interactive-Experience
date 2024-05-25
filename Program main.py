@@ -307,25 +307,29 @@ def next(choice):
 
     #this is if the user does not click on the right answer
     else:
-        #places the explanation to the answer and counts the incorrect answer(s)
-        if J != L:
-            explanation = customtkinter.CTkLabel(master = root, text=text_file[13+6*(L-1)], text_color="Black", fg_color= "#F1EDE3", font=("Comic Sans MS Bold",25), wraplength = 870)
-            explanation.place(relx = 0.5, rely = 0.85, anchor = CENTER)
-            J = L
-            incorrect_counter += 1
+        if L == 8 and choice == 2:
+            next(1)
 
-            #adjusts the size of the lable depending on the screen size
-            explanation.configure(font=("Comic Sans MS Bold",a45), wraplength = 1305*newx_multi)
-            
-        #disables the button the user has selected previously (so they dont click on the same wrong button twice)
-        if choice == 1:
-            answer1.configure(state = DISABLED)
-        if choice == 2:
-            answer2.configure(state = DISABLED)
-        if choice == 3:
-            answer3.configure(state = DISABLED)
-        if choice == 4:
-            answer4.configure(state = DISABLED)
+        else:
+            #places the explanation to the answer and counts the incorrect answer(s)
+            if J != L:
+                explanation = customtkinter.CTkLabel(master = root, text=text_file[13+6*(L-1)], text_color="Black", fg_color= "#F1EDE3", font=("Comic Sans MS Bold",25), wraplength = 870)
+                explanation.place(relx = 0.5, rely = 0.85, anchor = CENTER)
+                J = L
+                incorrect_counter += 1
+
+                #adjusts the size of the lable depending on the screen size
+                explanation.configure(font=("Comic Sans MS Bold",a45), wraplength = 1305*newx_multi)
+                
+            #disables the button the user has selected previously (so they dont click on the same wrong button twice)
+            if choice == 1:
+                answer1.configure(state = DISABLED)
+            if choice == 2:
+                answer2.configure(state = DISABLED)
+            if choice == 3:
+                answer3.configure(state = DISABLED)
+            if choice == 4:
+                answer4.configure(state = DISABLED)
 
 
 
