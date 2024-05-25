@@ -307,6 +307,8 @@ def next(choice):
 
     #this is if the user does not click on the right answer
     else:
+        #Question 8 has 2 right answers, so other right answer would've
+        #been counted as wrong but not anymore
         if L == 8 and choice == 2:
             next(1)
 
