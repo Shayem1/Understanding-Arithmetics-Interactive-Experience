@@ -15,17 +15,24 @@ Recommended requirements:
   - CPU (any that supports Windows 10/11)
   - GPU integrated or dedicated
   - RAM 4 GB or more
-  - Storage: 3Mb or more
+  - Storage: 272 Mb or more
   - Monitor: 1280 by 720 or more
   - Touchscreen or keyboard + mouse
   - Operating system: Windows 10 or 11 (other operating systems may work)
-    
+
+Installation:
+Automatic/install and run
+Download the zip and extract files
+- Go to "Program exe\dist\Program main.exe" and run normally
+
+Manual    
 ***Required pip-installations (requires pip) 
 *Copy and paste the text inside brackets and run in the terminal to install
 
 - pyttsx3 (pip install pyttsx3) (pip install pywin32)
 - PIL (pip install Pillow)
 - customtkinter + tkinter (pip install customtkinter) (pip install tk)
+
 
 Help:
 1. Quiz:
@@ -94,8 +101,3 @@ Acknowledgements:
 - Python 3.11.4 64 bit for coding
 
 - UTF-8 encoder and decoder to store and retrieve complex characters
-
-
-**To run
-
-- Go to "Program exe\dist\Program main.exe" and run normally
