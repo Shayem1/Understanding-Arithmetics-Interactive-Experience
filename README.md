@@ -27,9 +27,11 @@ Recommended requirements:
   - Touchscreen or keyboard + mouse
   - Operating system: Windows 10 or 11 (other operating systems may work)
 
-**Installation:**
-Automatic/install and run
-Download the zip and extract files [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/download/untagged-485cf5b7ab9f6b633618/Executable.Program.zip)
+**Installation:** 
+
+Automatic
+- Download the zip and extract files
+- Download by clicking: [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/download/untagged-485cf5b7ab9f6b633618/Executable.Program.zip)
 - Go to "Executable Program\dist\Program main\Program main.exe" and run normally
 
 Manual    
