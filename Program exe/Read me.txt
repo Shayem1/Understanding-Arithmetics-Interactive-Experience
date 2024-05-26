@@ -1,3 +1,0 @@
-To run the program
-1. The file may be detected as a virus, run at your own risk (I did not make a virus)
-2. executable is in "Program exe\dist\Program main.exe"
