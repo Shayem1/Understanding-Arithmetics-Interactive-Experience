@@ -12,7 +12,7 @@ Includes:
   - 20 questions - 5 multiple choice questions for each operation
   - Way to track score and accuracy 
   - 106 languages (default English)
-  - Speech to text
+  - Text to speech
   - 720p to max monitor resolution (including fullscreen)
   - Full touchscreen support
   - Complete the quiz however you want, and check your results by finishing question 20
