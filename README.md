@@ -3,11 +3,11 @@
 ![Screenshot 2024-05-25 214125](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/b140ca8c-931c-45db-96ba-755a909b95be)
 ![Screenshot 2024-05-25 213819](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/a44f7a08-85ca-4957-a5da-e0fae98a217a)
 ![Screenshot 2024-05-25 213934](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/assets/139934537/4d42a5a0-9591-4501-bb95-640cf2593758)
-
+##
 **Description**
 This program is intended for grades 1-2. Involves simple addition, subtraction, 
 multiplication and division alongside worded problems
-
+##
 Includes:
   - 20 questions - 5 multiple choice questions for each operation
   - Way to track score and accuracy 
@@ -17,7 +17,7 @@ Includes:
   - Full touchscreen support
   - Complete the quiz however you want, and check your results by finishing question 20
   - Explanation of every question
-
+##
 Recommended requirements:
   - CPU (any that supports Windows 10/11)
   - GPU integrated or dedicated
@@ -26,24 +26,57 @@ Recommended requirements:
   - Monitor: 1280 by 720 or more
   - Touchscreen or keyboard + mouse
   - Operating system: Windows 10 or 11 (other operating systems may work)
-
+##
 **Installation:** 
 
 Automatic Option 1
 - Install the OS-specific installer and run the file [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/tag/1.02)
+
+##
 
 Automatic Option 2 (Not recommended)
 - Download the zip and extract files
 - Download by clicking: [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/download/untagged-485cf5b7ab9f6b633618/Executable.Program.zip)
 - Go to "Executable Program\dist\Program main\Program main.exe" and run normally
 
+
+
+##
+
 Manual Option 1 (Not recommended)
+
 ***Required pip-installations (requires pip) 
 *Copy and paste the text inside brackets and run in the terminal to install
+#
+    pip install pyttsx3
+- Install pyttsx3 by copy pasting the following into the terminal
+#
+    pip install pywin32
+- Install pywin32 by copy pasting the following into the terminal
+#
+    pip install Pillow
+- Install PIL by copy pasting the following into the terminal
+#
+    pip install customtkinter
+- Install customtkinter by copy pasting the following into the terminal
+#
+    pip install tk
+- Install Tkinter by copy pasting the following into the terminal
+##
 
-- pyttsx3 (pip install pyttsx3) (pip install pywin32)
-- PIL (pip install Pillow)
-- customtkinter + tkinter (pip install customtkinter) (pip install tk)
+
+
+Manual Option 2 (PYPI installation)
+
+*Requires pip
+- Copy and paste the following into the terminal
+##
+    pip install arithmetics-sdd
+- Installs package
+##
+    arithmetics-ctk
+- Runs program
+##
 
 
 Help:
@@ -83,7 +116,7 @@ Help:
        Click on the speaker icon in any level and it will read out
        any language that uses the Latin/English alphabet
 
-
+##
 Acknowledgements:
 - Google translate Python module and web service for providing
   an effective and relatively fast method of converting English
