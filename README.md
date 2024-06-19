@@ -29,12 +29,15 @@ Recommended requirements:
 
 **Installation:** 
 
-Automatic
+Automatic Option 1
+- Install the OS-specific installer and run the file [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/tag/1.02)
+
+Automatic Option 2 (Not recommended)
 - Download the zip and extract files
 - Download by clicking: [here](https://github.com/Shayem1/Understanding-Arithmetics-Interactive-Experience/releases/download/untagged-485cf5b7ab9f6b633618/Executable.Program.zip)
 - Go to "Executable Program\dist\Program main\Program main.exe" and run normally
 
-Manual    
+Manual Option 1 (Not recommended)
 ***Required pip-installations (requires pip) 
 *Copy and paste the text inside brackets and run in the terminal to install
 
