@@ -59,9 +59,6 @@ Manual Option 1 (Not recommended)
 #
     pip install customtkinter
 - Install customtkinter by copy pasting the following into the terminal
-#
-    pip install tk
-- Install Tkinter by copy pasting the following into the terminal
 ##
 
 
